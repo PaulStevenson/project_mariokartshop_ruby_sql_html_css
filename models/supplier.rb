@@ -4,11 +4,11 @@ class Supplier
   attr_reader :id
   attr_accessor :name
 
-  def initalize(options)
+  def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
   end
 
 
 
-end 
+end

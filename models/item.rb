@@ -5,7 +5,7 @@ class Item
   attr_reader :id, :name, :description, :purchase_cost, :RRP, :category
   attr_accessor :quantity
 
-  def initalize(options)
+  def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @description = options['description']
