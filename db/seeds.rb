@@ -4,12 +4,14 @@ require('pry-byebug')
 
 
 supplier1 = Supplier.new({'name' => 'Toad Mushroom Powered'})
-
 supplier2 = Supplier.new({'name' => 'Red Shell Strike Equipment'})
-
 supplier3 = Supplier.new({'name' => 'Rainbow Exploration Agency'})
-
 supplier4 = Supplier.new({'name' => 'Banana Boy'})
+
+supplier1.save()
+supplier2.save()
+supplier3.save()
+supplier4.save()
 
 item1 = Item.new({
   'name' => 'Green Shell',
@@ -20,6 +22,7 @@ item1 = Item.new({
   'category' => 'Attack',
   'supplier_id' => supplier2.id
 })
+item1.save()
 
 item2 = Item.new({
   'name' => 'Red Shell',
@@ -30,6 +33,7 @@ item2 = Item.new({
   'category' => 'Attack',
   'supplier_id' => supplier2.id
 })
+item2.save()
 
 item4 = Item.new({
   'name' => 'Blue Shell',
@@ -40,6 +44,7 @@ item4 = Item.new({
   'category' => 'Attack',
   'supplier_id' => supplier2.id
 })
+item4.save()
 
 item3 = Item.new({
   'name' => 'Banana',
@@ -48,7 +53,9 @@ item3 = Item.new({
   'purchase_cost' => 2,
   'RRP' => 5,
   'category' => 'Defence',
-  'supplier_id' => supplier4.id})
+  'supplier_id' => supplier4.id
+  })
+item3.save()
 
 item5 = Item.new({
   'name' => 'Mushroom',
@@ -58,6 +65,7 @@ item5 = Item.new({
   'RRP' => 10,
   'category' => 'Boost',
   'supplier_id' => supplier1.id})
+item5.save()
 
 item6 = Item.new({
   'name' => 'Golden Mushroom',
@@ -67,6 +75,7 @@ item6 = Item.new({
   'RRP' => 40,
   'category' => 'Boost',
   'supplier_id' => supplier1.id})
+item6.save()
 
 item7 = Item.new({
   'name' => 'Star',
@@ -77,5 +86,6 @@ item7 = Item.new({
   'category' => 'Boost',
   'supplier_id' => supplier3.id
 })
+item7.save()
 
 binding.pry

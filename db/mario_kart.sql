@@ -1,5 +1,5 @@
-DROP TABLE  items;
-DROP TABLE suppliers;
+DROP TABLE items;
+DROP TABLE  suppliers;
 
 CREATE TABLE suppliers (
   id SERIAL8 PRIMARY KEY,
@@ -14,5 +14,5 @@ CREATE TABLE items (
   purchase_cost INT2,
   RRP INT2,
   category VARCHAR(255),
-  supplier_id INT8 references supplier(id)
+  supplier_id INT8 REFERENCES suppliers(id)
 );
