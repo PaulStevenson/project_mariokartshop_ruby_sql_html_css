@@ -9,6 +9,7 @@ get '/items' do
   erb(:index)
 end
 
+
 get '/items/suppliers' do
   @suppliers = Supplier.all
   erb(:suppliers)
@@ -16,4 +17,9 @@ end
 
 get '/items/new_item' do
   erb(:new_item)
+end
+
+get'/items/:id' do
+  @item = Item.find(params[:id])
+  erb(:show_item)
 end

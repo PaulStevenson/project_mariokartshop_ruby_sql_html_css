@@ -41,8 +41,6 @@ class Item
     SqlRunner.run(sql, values)
   end
 
-  
-
   ##CLASS
   def self.all()
     sql = 'SELECT * FROM items'
@@ -51,7 +49,7 @@ class Item
   end
 
   def self.find(id)
-    sql = 'SELECT * FROM items WHERE i =$1'
+    sql = 'SELECT * FROM items WHERE id =$1'
     values = [id]
     item = SqlRunner.run(sql, values)
     result = Item.new(item[0])
