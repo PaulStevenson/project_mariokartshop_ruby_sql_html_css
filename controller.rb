@@ -8,3 +8,7 @@ get '/items' do
   @items = Item.all
   erb(:index)
 end
+get '/items/suppliers' do
+  @suppliers = Supplier.all
+  erb(:supplier)
+end

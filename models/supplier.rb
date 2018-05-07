@@ -40,5 +40,13 @@ class Supplier
     return supplier_details.map { |supplier| Supplier.new(supplier)}
   end
 
+  def self.find(id)
+    sql = 'SELECT * FROM suppliers WHERE i =$1'
+    values = [id]
+    supplier = SqlRunner.run(sql, values)
+    result = Supplier.new(supplier[0])
+    return result
+  end
+
 
 end

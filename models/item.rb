@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Item
 
-  attr_reader :id, :name, :description, :purchase_cost, :RRP, :category
+  attr_reader :id, :name, :description, :purchase_cost, :RRP, :category, :supplier_id
   attr_accessor :quantity
 
   def initialize(options)
@@ -40,6 +40,8 @@ class Item
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
+  
 
   ##CLASS
   def self.all()
