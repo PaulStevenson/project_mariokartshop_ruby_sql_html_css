@@ -1,0 +1,10 @@
+<form action="/dashboard//suppliers/new_supplier" method="get">
+    <input type="submit" value="Add New Supplier"
+         name="Submit" id="frm1_submit" />
+</form>
+
+<%@suppliers.each do |supplier|  %>
+  <p>Name: <%=supplier.name %></p>
+
+<hr>
+<%end  %>

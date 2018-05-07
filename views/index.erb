@@ -1,10 +1,10 @@
-<%@items.each do |item|  %>
-  <p>Item: <%=item.name %></p>
-  <p>Quantity: <%=item.quantity  %></p>
-  <p>Category: <%=item.category  %></p>
-  <p>Supplier: <%=item.supplier_id  %></p>
+<p>Hello World</p>
 
-  <p> <a href="/items/<%= item.id %>">Show Item</a> </p>
-
-<hr>
-<%end  %>
+<form action="/dashboard/items/new_item" method="get">
+    <input type="submit" value="Add New Item"
+         name="Submit" id="frm1_submit" />
+</form>
+<form action="/dashboard//suppliers/new_supplier" method="get">
+    <input type="submit" value="Add New Supplier"
+         name="Submit" id="frm1_submit" />
+</form>

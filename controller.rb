@@ -4,21 +4,35 @@ require_relative('models/item')
 require_relative('models/supplier')
 require('pry-byebug')
 
-get '/items' do
-  @items = Item.all
+get '/dashboard' do
   erb(:index)
 end
 
-get '/items/suppliers' do
+get '/dashboard/items' do
+  @items = Item.all
+  erb(:"items/items")
+end
+
+get '/dashboard/suppliers' do
   @suppliers = Supplier.all
-  erb(:suppliers)
+  erb(:"suppliers/suppliers")
 end
 
-get '/items/new_item' do
-  erb(:new_item)
+get '/dashboard/items/new_item' do
+  erb(:"items/new_item")
 end
 
-get'/items/:id' do
+get '/dashboard/suppliers/new_supplier' do
+  erb(:"suppliers/new_supplier")
+end
+
+get 'dashboard/items/:id/edit' do
   @item = Item.find(params[:id])
-  erb(:show_item)
+  erb(:"items/edit_item")
+
+end
+
+get'/dashboard/items/:id' do
+  @item = Item.find(params[:id])
+  erb(:"items/show_item")
 end

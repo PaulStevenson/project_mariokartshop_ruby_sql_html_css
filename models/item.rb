@@ -16,6 +16,9 @@ class Item
     @supplier_id = options['supplier_id'].to_i
   end
 
+##Hogwarts name for foreign key
+
+
   def save()
     sql = 'INSERT INTO items (
     name, description, quantity, purchase_cost, RRP, category, supplier_id)
