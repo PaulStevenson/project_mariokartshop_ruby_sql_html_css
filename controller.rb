@@ -8,7 +8,12 @@ get '/items' do
   @items = Item.all
   erb(:index)
 end
+
 get '/items/suppliers' do
   @suppliers = Supplier.all
-  erb(:supplier)
+  erb(:suppliers)
+end
+
+get '/items/new_item' do
+  erb(:new_item)
 end

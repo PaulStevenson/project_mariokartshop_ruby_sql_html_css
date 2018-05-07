@@ -1,0 +1,37 @@
+<form method="post" action='/items'>
+  <label for="name_field">Name</label>
+  <input type="text" name="name" id='name_field'>
+
+  <label for="description_field">Description</label>
+  <input type="text" name="description" id='description_field'>
+
+  <label for="quantity_field">Quantity</label>
+  <input type="number" name="quantity" id='quantity_field'>
+
+  <label for="purchase_cost_field">Purchase_cost</label>
+  <input type="number" name="purchase_cost" id='purchase_cost_field'>
+
+  <label for="RRP_field">RRP</label>
+  <input type="number" name="RRP" id='RRP_field'>
+
+  <label for="category">Category</label>
+    <select name="category" id=category>
+      <option value="Attack">Attack</option>
+      <option value="Defence">Defence</option>
+      <option value="Boost">Boost</option>
+    </select>
+
+
+  <label for="supplier">Supplier</label>
+    <select name="supplier" id=supplier>
+      <option value="Toad Mushroom Powered">Toad Mushroom Powered</option>
+      <option value="Red Shell Strike Equipment">Red Shell Strike Equipment</option>
+      <option value="Rainbow Exploration Agency">Rainbow Exploration Agency</option>
+      <option value="Banana Boy">Banana Boy</option>
+    </select>
+
+
+</form>
+<hr>
+@category = options['category']
+@supplier_id = options['supplier_id'].to_i
