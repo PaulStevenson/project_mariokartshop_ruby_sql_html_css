@@ -2,11 +2,25 @@ require_relative('../models/item')
 require_relative('../models/supplier')
 require('pry-byebug')
 
+supplier1 = Supplier.new({
+  'name' => 'Toad Mushroom Powered',
+  'location' => 'Mushroom Kingdom',
+  'representative' => 'Toad'})
 
-supplier1 = Supplier.new({'name' => 'Toad Mushroom Powered'})
-supplier2 = Supplier.new({'name' => 'Red Shell Strike Equipment'})
-supplier3 = Supplier.new({'name' => 'Rainbow Exploration Agency'})
-supplier4 = Supplier.new({'name' => 'Banana Boy'})
+supplier2 = Supplier.new({
+  'name' => 'Red Shell Strike Equipment',
+  'location' => 'Mushroom Kingdom',
+  'representative' => 'Bowser'})
+
+supplier3 = Supplier.new({
+  'name' => 'Rainbow Exploration Agency',
+  'location' => 'Mushroom Kingdom',
+  'representative' => 'Mario'})
+
+supplier4 = Supplier.new({
+  'name' => 'Banana Boy',
+  'location' => 'Mushroom Kingdom',
+  'representative' => 'Donkey Kong'})
 
 supplier1.save()
 supplier2.save()

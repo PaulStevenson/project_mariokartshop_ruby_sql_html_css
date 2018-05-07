@@ -3,7 +3,9 @@ DROP TABLE  suppliers;
 
 CREATE TABLE suppliers (
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  location VARCHAR(255),
+  representative VARCHAR(255)
 );
 
 CREATE TABLE items (

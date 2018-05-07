@@ -2,28 +2,30 @@ require_relative('../db/sql_runner')
 
 class Supplier
   attr_reader :id
-  attr_accessor :name
+  attr_accessor :name, :location, :representative
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @location = options['location']
+    @representative = options['representative']
   end
 
   def save()
-    sql = 'INSERT INTO suppliers (name)
-    VALUES ($1)
+    sql = 'INSERT INTO suppliers (name, location, representative)
+    VALUES ($1, $2, $3)
     RETURNING id'
-    values = [@name]
+    values = [@name, @location, @representative]
     supplier = SqlRunner.run(sql, values)[0]
     @id = supplier['id'].to_i
   end
 
   def update
     sql = 'UPDATE items SET
-    (name)
-    = ($1)
-    WHERE id = $2'
-    values = [@name]
+    (name, location, representative)
+    = ($1, $2, $3, $4)
+    WHERE id = $5'
+    values = [@name, @location, @representative]
     item = SqlRunner.run(sql, values)
   end
 
@@ -41,7 +43,7 @@ class Supplier
   end
 
   def self.find(id)
-    sql = 'SELECT * FROM suppliers WHERE i =$1'
+    sql = 'SELECT * FROM suppliers WHERE id =$1'
     values = [id]
     supplier = SqlRunner.run(sql, values)
     result = Supplier.new(supplier[0])
