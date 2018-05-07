@@ -9,7 +9,6 @@ get '/items' do
   erb(:index)
 end
 
-
 get '/items/suppliers' do
   @suppliers = Supplier.all
   erb(:suppliers)
