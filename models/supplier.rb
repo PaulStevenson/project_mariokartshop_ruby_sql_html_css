@@ -18,5 +18,27 @@ class Supplier
     @id = supplier['id'].to_i
   end
 
+  def update
+    sql = 'UPDATE items SET
+    (name)
+    = ($1)
+    WHERE id = $2'
+    values = [@name]
+    item = SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = 'DELETE FROM suppliers WHERE id = $1'
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  ##CLASS
+  def self.all()
+    sql = 'SELECT * FROM suppliers'
+    supplier_details = SqlRunner.run(sql)
+    return supplier_details.map { |supplier| Supplier.new(supplier)}
+  end
+
 
 end
