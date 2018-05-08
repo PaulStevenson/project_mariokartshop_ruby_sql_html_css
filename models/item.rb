@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('supplier')
 
 class Item
 
@@ -16,7 +17,7 @@ class Item
     @supplier_id = options['supplier_id'].to_i
   end
 
-##Hogwarts name for foreign key
+##Hogwarts project- name for foreign key
 
 
   def save()
@@ -27,6 +28,11 @@ class Item
     values = [@name, @description, @quantity, @purchase_cost, @RRP, @category, @supplier_id]
     item = SqlRunner.run(sql, values)[0]
     @id = item['id'].to_i
+  end
+
+  def supplier
+    supplier = Supplier.find(@supplier_id)
+    return supplier
   end
 
   def update()

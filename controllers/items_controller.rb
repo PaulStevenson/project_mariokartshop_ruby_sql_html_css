@@ -1,23 +1,37 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/item')
+require_relative('../models/supplier')
 require('pry-byebug')
 
 get '/dashboard/items' do
   @items = Item.all
-  erb(:"items/items")
+  erb(:"items/index")
 end
 
-get '/dashboard/items/new_item' do
-  erb(:"items/new_item")
+get '/dashboard/items/new' do
+  @suppliers = Supplier.all
+  erb(:"items/new")
 end
+
+post '/dashboard/items' do
+ Item.new(params).save
+ redirect to("/dashboard/items")
+end
+
+post '/dashboard/items/:id'
+  item = Item.delete(params['id'])
+  item.delete
+  redirect to '/dashboard/items'
+end
+
 
 get 'dashboard/items/:id/edit' do
   @item = Item.find(params[:id])
-  erb(:"items/edit_item")
+  erb(:"items/edit")
 end
 
 get'/dashboard/items/:id' do
   @item = Item.find(params[:id])
-  erb(:"items/show_item")
+  erb(:"items/show")
 end

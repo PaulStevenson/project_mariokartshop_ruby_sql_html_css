@@ -1,4 +1,4 @@
-<form method="post" action='/items'>
+<form method="post" action='/dashboard/items'>
   <label for="name_field">Name</label>
   <input type="text" name="name" id='name_field'>
 
@@ -21,13 +21,11 @@
       <option value="Boost">Boost</option>
     </select>
 
-
-  <label for="supplier">Supplier</label>
-    <select name="supplier" id=supplier>
-      <option value="Toad Mushroom Powered">Toad Mushroom Powered</option>
-      <option value="Red Shell Strike Equipment">Red Shell Strike Equipment</option>
-      <option value="Rainbow Exploration Agency">Rainbow Exploration Agency</option>
-      <option value="Banana Boy">Banana Boy</option>
+  <label for="supplier_id">Supplier</label>
+    <select name="supplier_id" id="supplier_id">
+      <% @suppliers.each do |supplier| %>
+      <option value="<%=supplier.id  %>"><%=supplier.name %></option>
+      <%end %>
     </select>
 
   <input type="submit" value="Submit New Item">
