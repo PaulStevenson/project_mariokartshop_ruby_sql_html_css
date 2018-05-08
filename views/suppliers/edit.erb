@@ -1,0 +1,13 @@
+<form method="post" action='/dashboard/suppliers/<%=@supplier.id %>/'>
+  <label for="name_field">Company Name</label>
+  <input type="text" name="name" id="name_field" value="<%=@supplier.name %>">
+
+  <label for="location_field">Location</label>
+  <input type="text" name="location" id="location_field" value="<%=@supplier.location %>">
+
+  <label for="representative_field">Representative</label>
+  <input type="text" name="Representative" id="representative_field" value="<%=@supplier.representative %>">
+
+  <input type="submit" value="Update Supplier">
+
+</form>

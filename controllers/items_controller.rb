@@ -19,9 +19,16 @@ post '/dashboard/items' do
  redirect to("/dashboard/items")
 end
 
-get 'dashboard/items/:id/edit' do
+get '/dashboard/items/:id/edit' do
   @item = Item.find(params[:id])
+  @suppliers = Supplier.all
   erb(:"items/edit")
+end
+
+post '/dashboard/items/:id' do
+  item = Item.new(params)
+  item.update
+  redirect to '/dashboard/items'
 end
 
 post '/dashboard/items/:id/delete' do
