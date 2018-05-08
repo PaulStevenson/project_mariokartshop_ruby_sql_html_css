@@ -1,0 +1,11 @@
+<form method="post" action='/dashboard/customers/<%=@customer.id %>'>
+
+  <label for="name_field">Name</label>
+  <input type="text" name="name" id='name_field' value="<%=@customer.name %>">>
+
+  <label for="contact_field">Contact Info</label>
+  <input type="text" name="contact" id='contact_field' value="<%=@customer.contact %>">
+
+  <input type="submit" value="Update Item">
+
+</form>
