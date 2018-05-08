@@ -19,17 +19,17 @@ post '/dashboard/items' do
  redirect to("/dashboard/items")
 end
 
-post '/dashboard/items/:id'
-  item = Item.delete(params['id'])
-  item.delete
-  redirect to '/dashboard/items'
-end
-
-
 get 'dashboard/items/:id/edit' do
   @item = Item.find(params[:id])
   erb(:"items/edit")
 end
+
+post '/dashboard/items/:id/delete' do
+  item = Item.find(params[:id])
+  item.delete()
+  redirect to '/dashboard/items'
+end
+
 
 get'/dashboard/items/:id' do
   @item = Item.find(params[:id])

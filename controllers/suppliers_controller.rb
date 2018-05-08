@@ -17,6 +17,12 @@ post '/dashboard/suppliers' do
  redirect to("/dashboard/suppliers")
 end
 
+post '/dashboard/suppliers/:id/delete' do
+  supplier = Supplier.find(params[:id])
+  supplier.delete()
+  redirect to '/dashboard/suppliers'
+end
+
 get'/dashboard/suppliers/:id' do
   @supplier = Supplier.find(params[:id])
   erb(:"suppliers/supplier")
