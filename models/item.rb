@@ -3,7 +3,7 @@ require_relative('supplier')
 
 class Item
 
-  attr_reader :id, :name, :description, :purchase_cost, :RRP, :category, :supplier_id
+  attr_reader :id, :name, :description, :purchase_cost, :rrp, :category, :supplier_id
   attr_accessor :quantity
 
   def initialize(options)
@@ -12,7 +12,7 @@ class Item
     @description = options['description']
     @quantity = options['quantity'].to_i
     @purchase_cost = options['purchase_cost'].to_i
-    @RRP = options['RRP'].to_i
+    @rrp = options['rrp'].to_i
     @category = options['category']
     @supplier_id = options['supplier_id'].to_i
   end
@@ -22,10 +22,10 @@ class Item
 
   def save()
     sql = 'INSERT INTO items (
-    name, description, quantity, purchase_cost, RRP, category, supplier_id)
+    name, description, quantity, purchase_cost, rrp, category, supplier_id)
     VALUES ($1, $2, $3, $4, $5, $6, $7)
     RETURNING id'
-    values = [@name, @description, @quantity, @purchase_cost, @RRP, @category, @supplier_id]
+    values = [@name, @description, @quantity, @purchase_cost, @rrp, @category, @supplier_id]
     item = SqlRunner.run(sql, values)[0]
     @id = item['id'].to_i
   end
@@ -37,10 +37,10 @@ class Item
 
   def update()
     sql = 'UPDATE items SET
-    (name, description, quantity, purchase_cost, RRP, category, supplier_id)
+    (name, description, quantity, purchase_cost, rrp, category, supplier_id)
     = ($1, $2, $3, $4, $5, $6, $7)
     WHERE id = $8'
-    values = [@name, @description, @quantity, @purchase_cost, @RRP, @category, @supplier_id]
+    values = [@name, @description, @quantity, @purchase_cost, @rrp, @category, @supplier_id]
     item = SqlRunner.run(sql, values)
   end
 
