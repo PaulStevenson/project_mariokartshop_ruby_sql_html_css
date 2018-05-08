@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('customer')
 require_relative('item')
+require('pry-byebug')
 
 class Order
   attr_reader :item_id, :customer_id

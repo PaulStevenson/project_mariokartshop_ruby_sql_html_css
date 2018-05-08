@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('supplier')
+require('pry-byebug')
 
 class Item
 
@@ -16,9 +17,6 @@ class Item
     @category = options['category']
     @supplier_id = options['supplier_id'].to_i
   end
-
-##Hogwarts project- name for foreign key
-
 
   def save()
     sql = 'INSERT INTO items (
