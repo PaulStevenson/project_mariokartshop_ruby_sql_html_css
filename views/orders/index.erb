@@ -1,0 +1,10 @@
+<p> <a href="/dashboard/orders/new">New Order</a> </p>
+
+<%@orders.each do |order|  %>
+  <p>Item: <%=order.item.name %></p>
+  <p>Customer: <%=order.customer.name %></p>
+
+
+
+<hr>
+<%end  %>

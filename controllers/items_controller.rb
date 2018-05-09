@@ -37,7 +37,6 @@ post '/dashboard/items/:id/delete' do
   redirect to '/dashboard/items'
 end
 
-
 get'/dashboard/items/:id' do
   @item = Item.find(params[:id])
   erb(:"items/show")
