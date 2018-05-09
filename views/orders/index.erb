@@ -2,7 +2,7 @@
 
 <%@orders.each do |order|  %>
   <p>Item: <a href="/dashboard/items/<%=order.item_id%>"><%=order.item.name %></a></p>
-  <p>Customer: <%=order.customer.name %></p>
+  <p>Customer: <a href="/dashboard/customer/<%=order.customer_id%>"><%=order.customer.name %></a></p>
 
   <p> <a href="/dashboard/orders/<%= order.id %>">Show Order</a> </p>
 
