@@ -28,6 +28,7 @@ class Item
     @id = item['id'].to_i
   end
 
+##SQL find * supplier from supplier id
   def supplier
     supplier = Supplier.find(@supplier_id)
     return supplier

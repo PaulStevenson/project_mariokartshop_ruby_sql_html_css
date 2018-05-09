@@ -11,6 +11,8 @@ get '/dashboard/orders' do
 end
 
 get '/dashboard/orders/new' do
+  @customers = Customer.all
+  @items = Item.all
   erb(:"orders/new")
 end
 
