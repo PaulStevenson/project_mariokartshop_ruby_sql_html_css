@@ -21,6 +21,8 @@ end
 
 get '/dashboard/orders/:id/edit' do
   @order = Order.find(params[:id])
+  @customers = Customer.all
+  @items = Item.all
   erb(:"orders/edit")
 end
 
