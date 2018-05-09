@@ -4,8 +4,9 @@ require_relative('item')
 require('pry-byebug')
 
 class Order
-  
-  attr_reader :item_id, :customer_id
+
+  attr_reader :id
+  attr_accessor :item_id, :customer_id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
