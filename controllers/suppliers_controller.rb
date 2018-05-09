@@ -28,6 +28,7 @@ post '/dashboard/suppliers/:id' do
   redirect to '/dashboard/suppliers'
 end
 
+
 post '/dashboard/suppliers/:id/delete' do
   supplier = Supplier.find(params[:id])
   supplier.delete()

@@ -30,8 +30,13 @@ post '/dashboard/customers/:id/delete' do
   redirect to '/dashboard/customers'
 end
 
+get '/dashboard/customers/new' do
+  erb(:"customers/new")
+end
+
+
 
 get'/dashboard/customers/:id' do
-  @customer = Customer.find(params[:id])
+  @customer = Customer.find params["id"]
   erb(:"customers/show")
 end

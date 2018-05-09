@@ -38,7 +38,7 @@ class Item
     (name, description, quantity, purchase_cost, rrp, category, supplier_id)
     = ($1, $2, $3, $4, $5, $6, $7)
     WHERE id = $8'
-    values = [@name, @description, @quantity, @purchase_cost, @rrp, @category, @supplier_id]
+    values = [@name, @description, @quantity, @purchase_cost, @rrp, @category, @supplier_id, @id]
     item = SqlRunner.run(sql, values)
   end
 

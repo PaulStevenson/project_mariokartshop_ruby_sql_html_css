@@ -22,11 +22,11 @@ class Supplier
   end
 
   def update
-    sql = 'UPDATE items SET
+    sql = 'UPDATE suppliers SET
     (name, location, representative)
-    = ($1, $2, $3, $4)
-    WHERE id = $5'
-    values = [@name, @location, @representative]
+    = ($1, $2, $3)
+    WHERE id = $4'
+    values = [@name, @location, @representative, @id]
     item = SqlRunner.run(sql, values)
   end
 

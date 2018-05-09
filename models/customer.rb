@@ -28,7 +28,7 @@ class Customer
     (name, contact)
     = ($1, $2)
     WHERE id = $3'
-    values = [@name, @contact]
+    values = [@name, @contact, @id]
     customer = SqlRunner.run(sql, values)
   end
 
