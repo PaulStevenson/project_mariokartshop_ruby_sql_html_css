@@ -31,13 +31,13 @@ supplier4.save()
 
 customer1 = Customer.new({
   'name' => 'Mario',
-  'contact' => 'mario.noa.nintendo.com'
+  'contact' => 'mario@noa.nintendo.com'
   })
 
 
 customer2 = Customer.new({
   'name' => 'Bowser',
-  'contact' => 'bowser.noa.nintendo.com'
+  'contact' => 'bowser@noa.nintendo.com'
   })
 
   customer1.save()

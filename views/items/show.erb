@@ -4,7 +4,9 @@
 <p>Purchase Cost: <%=@item.purchase_cost  %></p>
 <p>RRP: <%=@item.rrp %></p>
 <p>Category: <%=@item.category  %></p>
-<p>Supplier: <%=@item.supplier_id  %></p>
+<p>Supplier: <a href="<%=@item.supplier_id%>"<%=@item.supplier_id  %></a></p>
+
+<p>Contact: <a href="mailto:<%=@customer.contact%>"><%=@customer.contact  %></a></p>
 
 <a href="/dashboard/items/<%=@item.id %>/edit">Update Item</a>
 

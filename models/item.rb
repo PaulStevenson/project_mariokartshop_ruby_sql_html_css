@@ -28,39 +28,44 @@ class Item
     @id = item['id'].to_i
   end
 
-##SQL find * supplier from supplier id
+  ##SQL find * supplier from supplier id
   def supplier
     supplier = Supplier.find(@supplier_id)
     return supplier
   end
 
-  def update()
-    sql = 'UPDATE items SET
-    (name, description, quantity, purchase_cost, rrp, category, supplier_id)
-    = ($1, $2, $3, $4, $5, $6, $7)
-    WHERE id = $8'
-    values = [@name, @description, @quantity, @purchase_cost, @rrp, @category, @supplier_id, @id]
-    item = SqlRunner.run(sql, values)
+  def reorder?()
+    @quantity >= 15
+    return 'Reorder'
   end
 
-  def delete()
-    sql = 'DELETE FROM items WHERE id = $1'
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
+    def update()
+      sql = 'UPDATE items SET
+      (name, description, quantity, purchase_cost, rrp, category, supplier_id)
+      = ($1, $2, $3, $4, $5, $6, $7)
+      WHERE id = $8'
+      values = [@name, @description, @quantity, @purchase_cost, @rrp, @category, @supplier_id, @id]
+      item = SqlRunner.run(sql, values)
+    end
 
-  ##CLASS
-  def self.all()
-    sql = 'SELECT * FROM items'
-    item_details = SqlRunner.run(sql)
-    return item_details.map { |item| Item.new(item)}
-  end
+    def delete()
+      sql = 'DELETE FROM items WHERE id = $1'
+      values = [@id]
+      SqlRunner.run(sql, values)
+    end
 
-  def self.find(id)
-    sql = 'SELECT * FROM items WHERE id =$1'
-    values = [id]
-    item = SqlRunner.run(sql, values)
-    result = Item.new(item[0])
-    return result
+    ##CLASS
+    def self.all()
+      sql = 'SELECT * FROM items'
+      item_details = SqlRunner.run(sql)
+      return item_details.map { |item| Item.new(item)}
+    end
+
+    def self.find(id)
+      sql = 'SELECT * FROM items WHERE id =$1'
+      values = [id]
+      item = SqlRunner.run(sql, values)
+      result = Item.new(item[0])
+      return result
+    end
   end
-end
