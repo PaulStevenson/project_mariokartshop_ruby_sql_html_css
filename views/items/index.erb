@@ -4,7 +4,8 @@
   <p>Item: <%=item.name %></p>
   <p>Quantity: <%=item.quantity  %></p>
   <p>Category: <%=item.category  %></p>
-  <p>Supplier: <%=item.supplier.name %></p>
+  <p>Supplier: <a href="/dashboard/suppliers/<%=item.supplier_id%>"><%=item.supplier.name %></a></p>
+
 
   <p> <a href="/dashboard/items/<%= item.id %>">Show Item</a> </p>
 
