@@ -2,11 +2,18 @@
 
 <p> <a href="/dashboard/suppliers/new">New Supplier</a> </p>
 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Rep</th>
+    <th>Show Supplier</th>
+  </tr>
+
 <%@suppliers.each do |supplier|  %>
-  <p>Name: <%=supplier.name %></p>
-  <p>Representative: <%=supplier.representative %></p>
-
-<p><a href="/dashboard/suppliers/<%= supplier.id %>">Show Supplier</a></p>
-
-<hr>
-<%end  %>
+    <tr>
+      <td><%=supplier.name %></td>
+      <td><%=supplier.representative %></td>
+      <td><a href="/dashboard/suppliers/<%= supplier.id %>">Show Supplier</a></td>
+    </tr>
+  <%end  %>
+</table>
