@@ -12,6 +12,8 @@ get '/dashboard/suppliers/new' do
   erb(:"suppliers/new")
 end
 
+
+
 post '/dashboard/suppliers' do
  Supplier.new(params).save
  redirect to("/dashboard/suppliers")

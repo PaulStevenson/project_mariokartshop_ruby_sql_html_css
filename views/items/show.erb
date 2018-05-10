@@ -6,10 +6,6 @@
 <p>Category: <%=@item.category  %></p>
 <p>Supplier: <a href="/dashboard/suppliers/<%=@item.supplier_id%>"><%=@item.supplier.name %></a></p>
 
-
-
-
-
 <a href="/dashboard/items/<%=@item.id %>/edit">Update Item</a>
 
 <form method="post" action="/dashboard/items/<%=@item.id%>/delete">
