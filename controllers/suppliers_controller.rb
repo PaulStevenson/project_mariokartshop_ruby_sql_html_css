@@ -12,7 +12,11 @@ get '/dashboard/suppliers/new' do
   erb(:"suppliers/new")
 end
 
-
+get '/dashboard/suppliers/:id' do
+ @supplier = Supplier.find(params[:id])
+ @items = @supplier.get_items()
+ erb(:'/suppliers/show')
+end
 
 post '/dashboard/suppliers' do
  Supplier.new(params).save

@@ -1,13 +1,12 @@
 body {
-  margin: 0;
-  padding: 0;
+  margin: 5;
+  padding: 5;
   font-family: "Super Mario 256";
   background: whitesmoke;
 }
 
 #menu {
   list-style: none;
-
   background-color: #D93A32;
   margin: 0;
   padding: 0;

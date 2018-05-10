@@ -30,6 +30,12 @@ class Supplier
     item = SqlRunner.run(sql, values)
   end
 
+  def get_items()
+     sql = "SELECT * FROM items WHERE supplier_id = $1"
+     values = [@id]
+     results = SqlRunner.run(sql, values)
+     return results.map {|result| Item.new(result)}
+   end
 
   def delete()
     sql = 'DELETE FROM suppliers WHERE id = $1'

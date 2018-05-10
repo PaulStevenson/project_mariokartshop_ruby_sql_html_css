@@ -1,17 +1,18 @@
 <form method="post" action='/dashboard/orders/<%=@order.id %>'>
 
-  <label for="item_id">Item</label>
-  <select name="item_id" id="item_id" selected="<%=@order.item_id%>">
+
+  <label for="item">Item</label>
+  <select name="item_id" id="item" selected="<%=@order.item_id%>">
     <% @items.each do |item| %>
-    <option value="<%=item.id  %>"><%=item.name %></option>
-    <%end %>
+        <option value=<%=item.id %> <%= "selected" if item.id == @order.item_id %> ><%= item.name %></option>
+    <%end   %>
   </select>
 
-  <label for="customer_id">Customer</label>
-  <select name="customer_id" id="customer_id" selected="<%=@order.customer_id%>">
+  <label for="customer">Racer</label>
+  <select name="customer_id" id="customer" selected="<%=@order.customer_id%>">
     <% @customers.each do |customer| %>
-    <option value="<%=customer.id  %>"><%=customer.name %></option>
-    <%end %>
+      <option value=<%=customer.id %> <%= "selected" if customer.id == @order.customer_id%> ><%=customer.name %></option>
+    <%end   %>
   </select>
 
   <input type="submit" value="Update Order">
