@@ -8,3 +8,9 @@
   <li><%= item.name  %></li>
 
 <% end  %>
+
+<a href="/dashboard/suppliers/<%=@supplier.id %>/edit">Update Supplier</a>
+
+<form method="post" action="/dashboard/suppliers/<%=@supplier.id%>/delete">
+   <input type="submit" value="Delete Supplier"/>
+ </form>
