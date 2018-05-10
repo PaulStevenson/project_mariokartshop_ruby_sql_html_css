@@ -2,11 +2,18 @@
 
 <p> <a href="/dashboard/orders/new">New Order</a> </p>
 
-<%@orders.each do |order|  %>
-  <p>Item: <a href="/dashboard/items/<%=order.item_id%>"><%=order.item.name %></a></p>
-  <p>Customer: <a href="/dashboard/customers/<%=order.customer_id%>"><%=order.customer.name %></a></p>
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Customer</th>
+    <th>Show Order</th>
+  </tr>
 
-  <p> <a href="/dashboard/orders/<%= order.id %>">Show Order</a> </p>
-
-<hr>
-<%end  %>
+  <%@orders.each do |order|  %>
+    <tr>
+      <td><a href="/dashboard/items/<%=order.item_id%>"><%=order.item.name %></a></td>
+      <td><a href="/dashboard/customers/<%=order.customer_id%>"><%=order.customer.name %></a></td>
+      <td><a href="/dashboard/orders/<%= order.id %>">Show Order</a></td>
+    </tr>
+  <%end  %>
+</table>
