@@ -1,27 +1,40 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto";
+  font-family: "Super Mario 256";
   background: whitesmoke;
 }
 
 #menu {
   list-style: none;
-  font-size: 1.2em;
+
   background-color: #D93A32;
   margin: 0;
   padding: 0;
-  font-family: "Roboto";
   text-align: center;
-  line-height: 40px;
-  height: 40px;
-  border-bottom: 1px solid #888;
 }
 
 nav li {
-  
+  font-size: 1.2em;
+  font-family: "Super Mario 256";
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+  display: inline-block;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
 }
 
 nav a:hover {
   background-color: red;
   transition: .3s background-color;
+}
+
+@media screen and (min-width: 600px) {
+
+  }
