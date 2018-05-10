@@ -2,14 +2,24 @@
 
 <p> <a href="/dashboard/items/new">New Item</a> </p>
 
-<%@items.each do |item|  %>
-  <p>Item: <%=item.name %></p>
-  <p>Quantity: <%=item.quantity  %></p>
-  <p>Category: <%=item.category  %></p>
-  <p>Supplier: <a href="/dashboard/suppliers/<%=item.supplier_id%>"><%=item.supplier.name %></a></p>
+<table>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Category</th>
+      <th>Supplier</th>
+      <th>Show More</th>
+      <th>Warning</th>
+    </tr>
 
-
-  <p> <a href="/dashboard/items/<%= item.id %>">Show Item</a> </p>
-
-<hr>
-<%end  %>
+  <%@items.each do |item|  %>
+    <tr>
+      <td><%=item.name%></td>
+      <td><%=item.quantity %></td>
+      <td><%=item.category %></td>
+      <td><a href="/dashboard/suppliers/<%=item.supplier_id%>"><%=item.supplier.name %></a></td>
+      <td><a href="/dashboard/items/<%= item.id %>">Show Item</a></td>
+      <td><%=  item.reorder?%></td>
+    </tr>
+  <%end  %>
+</table>

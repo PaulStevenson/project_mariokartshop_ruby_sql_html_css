@@ -1,8 +1,14 @@
 body {
-  margin: 5;
-  padding: 5;
   font-family: "Super Mario 256";
   background: whitesmoke;
+  padding: 30px;
+  margin-left: 50px;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: #30A9DE;
+  margin-bottom: 20px;
 }
 
 #menu {
@@ -35,5 +41,4 @@ nav a:hover {
 }
 
 @media screen and (min-width: 600px) {
-
-  }
+}

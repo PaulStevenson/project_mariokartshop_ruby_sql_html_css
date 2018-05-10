@@ -35,8 +35,9 @@ class Item
   end
 
   def reorder?()
-    @quantity >= 15
-    return 'Reorder'
+    if @quantity <= 15
+      return 'Reorder'
+    end
   end
 
   def update()
