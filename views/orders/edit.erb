@@ -1,5 +1,7 @@
-<form method="post" action='/dashboard/orders/<%=@order.id %>'>
+<h1>Update Order</h1>
 
+
+<form method="post" action='/dashboard/orders/<%=@order.id %>'>
 
   <label for="item">Item</label>
   <select name="item_id" id="item" selected="<%=@order.item_id%>">
