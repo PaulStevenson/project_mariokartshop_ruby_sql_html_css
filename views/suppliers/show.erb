@@ -4,14 +4,27 @@
 <p>Location: <%=@supplier.location %></p>
 <p>Representative: <%=@supplier.representative %></p>
 
-<% for item in @items  %>
-  <li><%= item.name  %></li>
-
-
-<% end  %>
 
 <a href="/dashboard/suppliers/<%=@supplier.id %>/edit">Update Supplier</a>
 
 <form method="post" action="/dashboard/suppliers/<%=@supplier.id%>/delete">
    <input type="submit" value="Delete Supplier"/>
  </form>
+
+ <table>
+   <tr>
+     <th>Supplied Items</th>
+     <th>Purchase Cost</th>
+     <th>RRP</th>
+     <th>Quantity</th>
+   </tr>
+
+   <% for item in @items  %>
+   <tr>
+     <td><%= item.name  %></td>
+     <td><%= item.purchase_cost%></td>
+     <td><%= item.rrp%></td>
+     <td><%=item.quantity%></td>
+   </tr>
+   <% end  %>
+ </table>
